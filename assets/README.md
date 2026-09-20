@@ -16,9 +16,6 @@ A2S 按组件拆分为以下同系列仓库，所有者均为 `23J1633`。/ A2S 
 | dsh2server | DeepSeek Harness 插件 / DeepSeek Harness plugin | [23J1633/dsh2server](https://www.github.com/23J1633/dsh2server) |
 | server-api | 中转服务与 Web 控制台 / relay server and Web console | [23J1633/server-api](https://www.github.com/23J1633/server-api) |
 | a2s_app | Flutter Android 客户端 / Flutter Android client | [23J1633/a2s_app](https://www.github.com/23J1633/a2s_app) |
-| scripts | 跨仓库验收脚本 / cross-repository acceptance scripts | [23J1633/scripts](https://www.github.com/23J1633/scripts) |
-| ICON | A2S 品牌源图 / A2S brand source artwork | [23J1633/ICON](https://www.github.com/23J1633/ICON) |
-| artifacts | 脱敏交付验证产物 / sanitized delivery evidence | [23J1633/artifacts](https://www.github.com/23J1633/artifacts) |
 
 - `icon.png`：Windows 窗口、任务栏、安装器与可执行文件图标，来自仓库根目录 `ICON/icon（白色背景）`。
 - `logo-transparent.png`：应用内左上角品牌标识，来自仓库根目录 `ICON/icon（透明背景）`；深色主题仅通过 CSS 反色保证可读性，不改变原始资产。
