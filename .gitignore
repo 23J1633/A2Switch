@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.electron-builder-cache/
+artifacts/smoke-config.json
+*.log

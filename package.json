@@ -1,0 +1,61 @@
+{
+  "name": "a2switch",
+  "version": "0.4.0",
+  "private": true,
+  "description": "A2S desktop control center for Claude Code, Codex and DeepSeek Harness bridges",
+  "author": "A2S contributors",
+  "license": "MIT",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "node --test test/config-service.test.js test/plugin-service.test.js test/server-client.test.js",
+    "test:dsh-control": "node scripts/dsh-control-test.js",
+    "test:install-all": "electron . --smoke-install-all",
+    "doctor": "node scripts/doctor.js",
+    "icon": "electron scripts/render-icon.cjs",
+    "pack": "node scripts/build.cjs --dir",
+    "dist": "node scripts/build.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.a2s.switch",
+    "productName": "A2Switch",
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.cjs",
+      "lib/**/*",
+      "renderer/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "assets/icon.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "artifactName": "A2Switch-Setup-${version}-${arch}.${ext}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "portable": {
+      "artifactName": "A2Switch-Portable-${version}-${arch}.${ext}"
+    }
+  },
+  "dependencies": {
+    "extract-zip": "^2.0.1"
+  }
+}

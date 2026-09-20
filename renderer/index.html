@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>A2Switch</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="appShell">
+    <header class="topbar">
+      <button class="brand" data-view="overview" id="brandButton" aria-label="返回总览">
+        <img class="brandLogo" src="../assets/logo-transparent.png" alt="A2Switch">
+      </button>
+      <nav class="agentTabs" aria-label="Agent 选择">
+        <button class="agentTab active" data-view="overview"><span class="uiIcon icon-layout-dashboard" aria-hidden="true"></span><span id="overviewLabel">总览</span></button>
+        <button class="agentTab" data-view="claude"><span class="brandIcon brand-claude" aria-hidden="true"></span><span>Claude</span></button>
+        <button class="agentTab" data-view="codex"><span class="brandIcon brand-codex" aria-hidden="true"></span><span>Codex</span></button>
+        <button class="agentTab" data-view="dsh"><span class="brandIcon brand-dsh" aria-hidden="true"></span><span>DSH</span></button>
+      </nav>
+      <nav class="tools" aria-label="管理页面">
+        <img id="profileAvatar" class="profileAvatar" src="../assets/logo-transparent.png" alt="统一头像" title="统一头像">
+        <button class="iconBtn" data-view="config" id="configNav" title="统一配置" aria-label="统一配置"><span class="uiIcon icon-settings" aria-hidden="true"></span></button>
+        <button class="iconBtn" data-view="plugins" id="pluginsNav" title="插件目录" aria-label="插件目录"><span class="uiIcon icon-blocks" aria-hidden="true"></span></button>
+        <button class="iconBtn" data-view="logs" id="logsNav" title="运行日志" aria-label="运行日志"><span class="uiIcon icon-scroll-text" aria-hidden="true"></span></button>
+        <button class="iconBtn" id="themeBtn" title="切换主题" aria-label="切换主题"><span id="themeIcon" class="uiIcon icon-moon" aria-hidden="true"></span></button>
+        <button class="iconBtn languageBtn" id="languageBtn" title="Switch to English" aria-label="Switch to English"><span class="uiIcon icon-languages" aria-hidden="true"></span><span id="languageLabel">EN</span></button>
+        <button class="iconBtn primaryIcon" id="refreshBtn" title="刷新状态" aria-label="刷新状态"><span class="uiIcon icon-refresh-cw" aria-hidden="true"></span></button>
+      </nav>
+    </header>
+    <main id="content" tabindex="-1"></main>
+    <footer class="statusbar">
+      <span id="serverIndicator" class="statusPill muted">服务器未配置</span>
+      <span id="configPath" class="pathText"></span>
+      <span class="spacer"></span>
+      <span id="appVersion"></span>
+    </footer>
+  </div>
+  <div id="toastHost" class="toastHost" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
